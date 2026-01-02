@@ -273,8 +273,4 @@ See `cmds.md` for the complete command reference, including:
 - Git scripts assume repositories are located in `~/Git/`
 - Music diff script automatically handles GVFS/MTP paths for Android devices
 - Timeline parser supports the new Google Takeout semantic segments format
-- All scripts include error handling and informative output
-
-## License
-
-These are personal utility scripts. Use and modify as needed.
+- Scripts include error handling and informative output
