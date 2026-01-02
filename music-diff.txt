@@ -1,0 +1,27 @@
+🎵 Musikordner-Vergleich
+============================================================
+Ordner 1: Music/
+Ordner 2: mtp://Google_Pixel_9a_4A181JEBF17841/Internal%20shared%20storage/Music/
+============================================================
+
+📂 Scanne Ordner...
+   Scanne: Music
+   ✓ Ordner 1: 1591 Dateien gefunden
+   MTP-Pfad erkannt, versuche zu konvertieren...
+   → Verwende lokalen Mount-Pfad: /run/user/1000/gvfs/mtp:host=Google_Pixel_9a_4A181JEBF17841/Internal shared storage/Music/
+   Scanne: /run/user/1000/gvfs/mtp:host=Google_Pixel_9a_4A181JEBF17841/Internal shared storage/Music
+   ✓ Ordner 2: 1591 Dateien gefunden
+
+📊 ERGEBNIS:
+============================================================
+
+✅ In beiden Ordnern (1591 Dateien)
+
+============================================================
+📋 ZUSAMMENFASSUNG:
+   Gesamt in Ordner 1: 1591
+   Gesamt in Ordner 2: 1591
+   In beiden:          1591
+   Nur in Ordner 1:    0
+   Nur in Ordner 2:    0
+============================================================
