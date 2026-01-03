@@ -2,7 +2,7 @@
 
 * **Find files by name pattern recursively:**
 ```bash
-  find . -name "*400-C*"
+find . -name "*400-C*"
 ```
 
 * **Search for text within files recursively:**
