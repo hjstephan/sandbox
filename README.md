@@ -49,7 +49,7 @@ A collection of utility scripts and command reference documentation for various 
 
 ### 📍 Location Data Analysis
 
-- **`timeline-parser.py`** - Google Timeline Semantic Segments Parser
+- **`timeline-parser.py`** - Google Timeline Parser
   - Parses Google Takeout timeline data in the new semantic segments format
   - Extracts activities (movement), visits (stays), GPS positions, and WiFi scans
   - Calculates distances using haversine formula
@@ -360,7 +360,7 @@ Distance by activity type:
 === LOCATION DATA ===
 Records with location data: 950/1250 (76.0%)
 
-Data exported to timeline_semantic.csv
+Data exported to timeline.csv
 ```
 
 **CSV Export Fields:**

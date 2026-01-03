@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Google Timeline Semantic Segments Parser
-Parses the new semantic segments format with activities, visits, and positions
+Google Timeline Parser parses the activities, visits, and positions and analyzes
+the data to provide insights into movement patterns and location history.
 """
 
 import argparse
@@ -9,11 +9,10 @@ import json
 import math
 import os
 from collections import defaultdict
-from datetime import datetime, timedelta
-import re
+from datetime import datetime
 
 
-class TimelineSemanticParser:
+class TimelineParser:
     def __init__(self, file_path=None):
         self.file_path = file_path
         self.semantic_segments = []
@@ -392,7 +391,7 @@ class TimelineSemanticParser:
         print(f"\n=== LOCATION DATA ===")
         print(f"Records with location data: {len(location_records)}/{len(records)} ({len(location_records) / len(records) * 100:.1f}%)")
 
-    def export_csv(self, records, filename="timeline_semantic.csv"):
+    def export_csv(self, records, filename="timeline.csv"):
         """Export records to CSV"""
         import csv
 
@@ -443,7 +442,7 @@ class TimelineSemanticParser:
 def main():
     """Main function"""
     parser = argparse.ArgumentParser(
-        description="Parse Google Timeline Semantic Segments format"
+        description="Parse Google Timeline in JSON format and analyze activities and locations"
     )
     parser.add_argument("path", help="Path to Timeline JSON file")
     parser.add_argument("--export-csv", action="store_true", help="Export to CSV file")
@@ -454,11 +453,11 @@ def main():
         print(f"Error: Path {args.path} not found!")
         return
 
-    print("Google Timeline Semantic Segments Parser")
+    print("Google Timeline Parser")
     print("=" * 50)
 
     # Initialize parser
-    timeline_parser = TimelineSemanticParser(args.path)
+    timeline_parser = TimelineParser(args.path)
 
     # Load data
     if not timeline_parser.load_timeline_data():
