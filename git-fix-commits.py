@@ -9,12 +9,12 @@ Usage:
     python fix_commits.py ~/Git/my-repo
 """
 
+import os
 import subprocess
 import sys
-import os
+import tempfile
 from pathlib import Path
 from typing import List, Tuple
-import tempfile
 
 try:
     from spellchecker import SpellChecker
@@ -330,17 +330,17 @@ def get_user_choice_for_commit(commit_hash: str, original: str, suggested: str, 
     print()
     print("Options:")
     print("  [y] Accept suggestion")
-    print("  [n] Skip this commit (keep original)")
+    print("  [s] Skip this commit (keep original)")
     print("  [e] Edit manually")
     print("  [a] Abort (stop processing)")
     print()
     
     while True:
-        choice = input("Your choice [y/n/e/a]: ").strip().lower()
+        choice = input("Your choice [y/s/e/a]: ").strip().lower()
         
         if choice == 'y' or choice == 'yes':
             return ('accept', suggested)
-        elif choice == 'n' or choice == 'no':
+        elif choice == 's' or choice == 'skip':
             return ('skip', original)
         elif choice == 'e' or choice == 'edit':
             print(f"\nCurrent message: {original}")
