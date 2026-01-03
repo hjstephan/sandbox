@@ -27,6 +27,16 @@ A collection of utility scripts and command reference documentation for various 
   - Displays associated GitHub releases using `gh` CLI
   - Useful for tracking version history across projects
 
+- **`git-fix-commits.py`** - Interactive spell checker and style fixer for commit messages
+  - Supports both English and German commit messages
+  - Automatic language detection per commit
+  - Interactive commit-by-commit review with options to accept, skip, or manually edit
+  - Corrects spelling errors using language-specific dictionaries
+  - Applies commit message style conventions (capitalization, grammar)
+  - Handles context-aware corrections (e.g., "bachelor thesis" → "bachelor's thesis")
+  - Can process single repositories or all repositories in a directory
+  - Creates backup references for safety
+
 ### 🎵 Music Management
 
 - **`music-diff.py`** - Compare music collections between two locations
@@ -106,6 +116,126 @@ Tags and Releases:
 
 ---
 
+#### git-fix-commits.py
+Interactive spell checker and style fixer for Git commit messages. Supports both English and German.
+
+**Installation:**
+```bash
+# Install required Python packages
+pip install pyspellchecker langdetect
+```
+
+**Basic Usage:**
+```bash
+# Process a single repository
+python3 git-fix-commits.py ~/Git/my-repo
+
+# Process all repositories in a directory
+python3 git-fix-commits.py ~/Git/
+```
+
+**Interactive Session Example:**
+```
+======================================================================
+Repository: my-project
+======================================================================
+Found 12 commits to check.
+Found 3 commit(s) with potential corrections.
+
+======================================================================
+Commit 1/3
+Hash: a1b2c3d4
+======================================================================
+Original:  GitHub Insights with Python Script
+Suggested: GitHub insights with Python script
+
+Options:
+  [y] Accept suggestion
+  [n] Skip this commit (keep original)
+  [e] Edit manually
+  [a] Abort (stop processing)
+
+Your choice [y/n/e/a]: y
+✓ Will change to: GitHub insights with Python script
+
+======================================================================
+Commit 2/3
+Hash: b2c3d4e5
+======================================================================
+Original:  Add bachelor thesis and masters thesis
+Suggested: Add bachelor's thesis and master's thesis
+
+Options:
+  [y] Accept suggestion
+  [n] Skip this commit (keep original)
+  [e] Edit manually
+  [a] Abort (stop processing)
+
+Your choice [y/n/e/a]: e
+
+Current message: Add bachelor thesis and masters thesis
+Enter new commit message: Add bachelor's and master's thesis
+New message: Add bachelor's and master's thesis
+Confirm? [y/n]: y
+✓ Will change to: Add bachelor's and master's thesis
+
+======================================================================
+Summary: 2 commit(s) will be changed:
+======================================================================
+  • GitHub Insights with Python Script
+    → GitHub insights with Python script
+
+  • Add bachelor thesis and masters thesis
+    → Add bachelor's and master's thesis
+
+Apply these changes? [yes/no]: yes
+
+Rewriting commit history...
+✓ Commit history rewritten successfully!
+```
+
+**What it corrects:**
+
+*English commits:*
+- Spelling errors: "documantation" → "documentation"
+- Capitalization: "Insights" → "insights", "Script" → "script"
+- Grammar: "bachelor thesis" → "bachelor's thesis"
+- Proper nouns: "github" → "GitHub", "python" → "Python"
+
+*German commits:*
+- Rechtschreibfehler
+- Substantive werden großgeschrieben: "einblicke" → "Einblicke"
+- Deutsche Phrasen: "bachelor thesis" → "Bachelorarbeit"
+
+**After running the script:**
+```bash
+cd ~/Git/my-repo
+
+# Verify changes
+git log --oneline -10
+
+# Push changes (force required as history was rewritten)
+git push --force origin main
+```
+
+**Important Notes:**
+- ⚠️ **This rewrites Git history** - commit hashes will change
+- Create a backup branch before running: `git branch backup`
+- If repository was already pushed, you'll need `git push --force`
+- Coordinate with team members if working on a shared repository
+- The script ensures working tree is clean before making changes
+
+**Features:**
+- Automatic language detection (English/German)
+- Interactive review - decide for each commit
+- Manual editing option for full control
+- Context-aware corrections (phrases, proper nouns)
+- Processes multiple repositories in batch
+- Safe operation with confirmation prompts
+- Comprehensive summary of changes
+
+---
+
 ### Music Management
 
 #### music-diff.py
@@ -141,8 +271,8 @@ Ordner 2: mtp://...
 ============================================================
 
 📂 Scanne Ordner...
-   ✓ Ordner 1: 1591 Dateien gefunden
-   ✓ Ordner 2: 1591 Dateien gefunden
+   ✔ Ordner 1: 1591 Dateien gefunden
+   ✔ Ordner 2: 1591 Dateien gefunden
 
 📊 ERGEBNIS:
 ============================================================
@@ -257,7 +387,12 @@ Data exported to timeline_semantic.csv
 - ocrmypdf, pdftotext, wkhtmltopdf (for PDF operations)
 
 ### Python Dependencies
-The Python scripts use standard library modules, no additional packages required.
+```bash
+# For git-fix-commits.py
+pip install pyspellchecker langdetect
+
+# Other scripts use standard library modules only
+```
 
 ## Quick Reference Commands
 
@@ -273,4 +408,5 @@ See `cmds.md` for the complete command reference, including:
 - Git scripts assume repositories are located in `~/Git/`
 - Music diff script automatically handles GVFS/MTP paths for Android devices
 - Timeline parser supports the new Google Takeout semantic segments format
+- Git commit fixer rewrites history - always create backups first
 - Scripts include error handling and informative output
