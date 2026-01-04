@@ -151,11 +151,11 @@ Suggested: GitHub insights with Python script
 
 Options:
   [y] Accept suggestion
-  [n] Skip this commit (keep original)
+  [s] Skip this commit (keep original)
   [e] Edit manually
   [a] Abort (stop processing)
 
-Your choice [y/n/e/a]: y
+Your choice [y/s/e/a]: y
 ✓ Will change to: GitHub insights with Python script
 
 ======================================================================
@@ -167,11 +167,11 @@ Suggested: Add bachelor's thesis and master's thesis
 
 Options:
   [y] Accept suggestion
-  [n] Skip this commit (keep original)
+  [s] Skip this commit (keep original)
   [e] Edit manually
   [a] Abort (stop processing)
 
-Your choice [y/n/e/a]: e
+Your choice [y/s/e/a]: e
 
 Current message: Add bachelor thesis and masters thesis
 Enter new commit message: Add bachelor's and master's thesis
@@ -375,6 +375,47 @@ Data exported to timeline.csv
 - `duration_seconds` - Duration of activity
 - `place_id` - Google Place ID (for visits)
 - `semantic_type` - Semantic location type (HOME, WORK, etc.)
+
+#### monthly-activity.py
+Summarize timeline.csv data by month for verification against Google Timeline app.
+
+**Basic Usage:**
+```bash
+# Process timeline.csv (must be generated first by timeline-parser.py)
+python3 monthly-activity.py
+```
+
+**Complete Workflow:**
+```bash
+# Step 1: Parse JSON and export to CSV
+python3 timeline-parser.py timeline.json --export-csv
+
+# Step 2: Generate monthly summary
+python3 monthly-activity.py
+```
+
+**Output:**
+The script generates console output and saves to `monthly-summary.txt`:
+
+```
+============================================================
+MONTH: 2025-12
+============================================================
+Total Activities: 707
+Total Distance: 1990.05 km
+Total Duration: 747.39 hours
+Visits: 307
+
+Activity Breakdown:
+  - IN_BUS: 15
+  - IN_PASSENGER_VEHICLE: 8
+  - IN_SUBWAY: 5
+  - IN_TRAIN: 46
+  - IN_TRAM: 71
+  - WALKING: 255
+```
+
+**Use Case:** Compare monthly distance totals with your Google Timeline app to verify parsing accuracy.
 
 ## Requirements
 

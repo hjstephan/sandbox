@@ -1,0 +1,130 @@
+
+============================================================
+MONTH: 2025-06
+============================================================
+Total Activities: 530
+Total Distance: 946.96 km
+Total Duration: 636.37 hours
+Visits: 252
+
+Activity Breakdown:
+  - CYCLING: 105
+  - IN_BUS: 14
+  - IN_FERRY: 1
+  - IN_PASSENGER_VEHICLE: 23
+  - IN_TRAIN: 17
+  - IN_TRAM: 28
+  - WALKING: 90
+
+============================================================
+MONTH: 2025-07
+============================================================
+Total Activities: 580
+Total Distance: 764.66 km
+Total Duration: 750.21 hours
+Visits: 286
+
+Activity Breakdown:
+  - CYCLING: 154
+  - IN_BUS: 9
+  - IN_PASSENGER_VEHICLE: 10
+  - IN_SUBWAY: 1
+  - IN_TRAIN: 8
+  - IN_TRAM: 30
+  - WALKING: 82
+
+============================================================
+MONTH: 2025-08
+============================================================
+Total Activities: 536
+Total Distance: 631.07 km
+Total Duration: 752.16 hours
+Visits: 273
+
+Activity Breakdown:
+  - CYCLING: 162
+  - IN_BUS: 5
+  - IN_PASSENGER_VEHICLE: 7
+  - IN_TRAIN: 4
+  - IN_TRAM: 2
+  - WALKING: 83
+
+============================================================
+MONTH: 2025-09
+============================================================
+Total Activities: 582
+Total Distance: 844.66 km
+Total Duration: 755.58 hours
+Visits: 291
+
+Activity Breakdown:
+  - CYCLING: 132
+  - IN_BUS: 5
+  - IN_PASSENGER_VEHICLE: 15
+  - IN_TRAIN: 11
+  - IN_TRAM: 14
+  - WALKING: 114
+
+============================================================
+MONTH: 2025-10
+============================================================
+Total Activities: 623
+Total Distance: 1189.49 km
+Total Duration: 758.38 hours
+Visits: 274
+
+Activity Breakdown:
+  - CYCLING: 44
+  - IN_BUS: 33
+  - IN_PASSENGER_VEHICLE: 8
+  - IN_SUBWAY: 1
+  - IN_TRAIN: 25
+  - IN_TRAM: 54
+  - WALKING: 184
+
+============================================================
+MONTH: 2025-11
+============================================================
+Total Activities: 635
+Total Distance: 1136.51 km
+Total Duration: 725.46 hours
+Visits: 263
+
+Activity Breakdown:
+  - CYCLING: 6
+  - IN_BUS: 34
+  - IN_PASSENGER_VEHICLE: 13
+  - IN_SUBWAY: 5
+  - IN_TRAIN: 19
+  - IN_TRAM: 98
+  - WALKING: 197
+
+============================================================
+MONTH: 2025-12
+============================================================
+Total Activities: 707
+Total Distance: 1990.05 km
+Total Duration: 747.39 hours
+Visits: 307
+
+Activity Breakdown:
+  - IN_BUS: 15
+  - IN_PASSENGER_VEHICLE: 8
+  - IN_SUBWAY: 5
+  - IN_TRAIN: 46
+  - IN_TRAM: 71
+  - WALKING: 255
+
+============================================================
+MONTH: 2026-01
+============================================================
+Total Activities: 48
+Total Distance: 88.62 km
+Total Duration: 34.47 hours
+Visits: 18
+
+Activity Breakdown:
+  - IN_BUS: 1
+  - IN_TRAIN: 4
+  - IN_TRAM: 8
+  - WALKING: 17
