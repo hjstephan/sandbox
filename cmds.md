@@ -87,10 +87,7 @@ vsce publish -p $AZURE_TOKEN
 
 * **SchemaSpy Documentation:**
 ```bash
-java -jar schemaspy-app.jar -t pgsql -host localhost:5432 \
--db hospital_db -s public -u hospital_admin -p dbpassword \
--dp ~/.m2/repository/org/postgresql/postgresql/42.7.8/postgresql-42.7.8.jar \
--o doc/schemaspy -vizjs
+java -jar schemaspy-app.jar -t pgsql -host localhost:5432 -db hospital_db -s public -u hospital_admin -p dbpassword -dp ../../postgresql-42.7.1.jar -o doc/schmeaspy -vizjs
 
 ```
 
