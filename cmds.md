@@ -11,6 +11,8 @@ grep -r "Berlin" .
 
 ```
 
+
+
 ---
 
 ## PDF Tools
@@ -35,6 +37,12 @@ wkhtmltopdf --page-size A4 --margin-top 25mm \
 --margin-bottom 25mm --margin-left 20mm \
 --margin-right 20mm Lebenslauf.html Lebenslauf.pdf
 
+```
+
+
+* **Convert PDF to SVG:**
+```bash
+rsvg-convert -f pdf -o experiment-results.pdf experiment-results.svg
 ```
 
 
@@ -186,6 +194,8 @@ sudo chmod u+s /usr/bin/bwrap
 export WEBKIT_FORCE_SANDBOX=0
 
 ```
+
+
 
 ---
 
