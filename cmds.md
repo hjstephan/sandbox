@@ -175,6 +175,29 @@ sudo apt install ubuntu-wallpapers-{hirsute,groovy,focal,eoan,disco,cosmic,bioni
 
 ---
 
+## Clear Evolution’s Local Calendar Cache
+
+* **Close Evolution:**
+```bash
+evolution --force-shutdown
+```
+
+
+* **Remove the calendar cache:**
+```bash
+rm -rf ~/.cache/evolution/calendar
+
+```
+
+* **Start Evolution again:**
+```bash
+evolution
+```
+
+
+
+---
+
 ## Application Builds (Evolution Mail)
 
 * **Compile from Source:**
