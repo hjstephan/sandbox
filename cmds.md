@@ -65,6 +65,13 @@ git push origin main
 ```
 
 
+* **Show Java Alternatives:**
+```bash
+sudo update-alternatives --config java
+
+```
+
+
 * **VS Code Extension - Build & Install:**
 ```bash
 npm install && vsce package
