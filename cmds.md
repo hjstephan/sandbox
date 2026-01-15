@@ -97,6 +97,9 @@ vsce publish -p $AZURE_TOKEN
 ```bash
 java -jar schemaspy-app.jar -t pgsql -host localhost:5432 -db hospital_db -s public -u hospital_admin -p dbpassword -dp ../../postgresql-42.7.1.jar -o doc/schmeaspy -vizjs
 
+sudo chown -R $USER:$USER doc/schemaspy
+sudo docker run -v "$PWD/doc/schemaspy:/output" --net=host schemaspy/schemaspy:6.2.4   -t pgsql11 -host localhost -port 5432 -db gen -u dbuser -p dbpassword -s public
+
 ```
 
 
