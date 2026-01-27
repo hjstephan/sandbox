@@ -43,6 +43,8 @@ wkhtmltopdf --page-size A4 --margin-top 25mm \
 * **Convert PDF to SVG:**
 ```bash
 rsvg-convert -f pdf -o experiment-results.pdf experiment-results.svg
+
+for file in src/results/*.svg; do rsvg-convert -f pdf -o "science/$(basename "$file" .svg).pdf" "$file"; done
 ```
 
 
