@@ -81,6 +81,12 @@ code --install-extension java-refactoring-analyzer-0.0.1.vsix
 
 ```
 
+* **Python Requirements Freeze:**
+```bash
+pip freeze | cut -d= -f1 > requirements.txt
+
+```
+
 
 * **NPM Testing:**
 ```bash
