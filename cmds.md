@@ -67,6 +67,12 @@ git push origin main
 ```
 
 
+* **Content of all repositores:**
+```bash
+echo "# Übersicht der Repositories" > README.md && for d in */; do [ -f "${d}README.md" ] && echo -e "\n##  {d%/}\n" >> README.md && cat "${d}README.md" >> README.md; done
+
+```
+
 * **Show Java Alternatives:**
 ```bash
 sudo update-alternatives --config java
